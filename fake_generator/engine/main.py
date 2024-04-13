@@ -1,4 +1,4 @@
-from fake_generator import FakeGenerator
+from fake_generator.enginefake_gen import FakeGenerator
 
 if __name__ == "__main__":
     print('Generate Fake Data')
