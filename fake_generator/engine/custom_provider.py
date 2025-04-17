@@ -1,8 +1,14 @@
+import randint
 from faker import Faker
-from faker.providers import BaseProvider
 
 class CustomProvider:
     
+    @classmethod
+    def random_with_N_digits(cls, n):
+        range_start = 10**(n-1)
+        range_end = (10**n)-1
+        return randint(range_start, range_end)
+
     @classmethod
     def id_class(cls):
         faker = Faker()
@@ -31,4 +37,4 @@ class CustomProvider:
     @classmethod
     def num_compte(cls):
         faker = Faker()
-        return faker.country_code() + str(random_with_N_digits(25))
+        return faker.country_code() + str(CustomProvider.random_with_N_digits(25))
